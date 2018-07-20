@@ -1,3 +1,5 @@
+import datetime
+
 class SortingAlgorithm:
     def linear_search(self, ul, start, end):
         num = ul[start]
@@ -15,9 +17,10 @@ class SortingAlgorithm:
                     ul[x-1] = ul[y-1]
                     ul[y-1] = holder
 
-    def insertion_sort(self, ul):
-        leng = len(ul)
+            print(ul)
 
+    def selection_sort(self, ul):
+        leng = len(ul)
         for x in range(0, leng-1):
             num = self.linear_search(ul, x, leng)
             index = ul.index(num)
@@ -27,11 +30,31 @@ class SortingAlgorithm:
 
             print(ul)
 
+    def insertion_sort(self, ul):
+        leng = len(ul)
+        for x in range(1, leng):
+            num = ul[x]
+            i = x
+            while i>=1 and num < ul[i-1]:
+                ul[i] = ul[i-1]
+                i-=1
+            ul[i] = num
+
+            print(ul)
 
 
 
 
-newList = [1,3,5,4,6,2,7,9,8]
+
+
+
+
+
+
+newList = [7,3,5,4,6,2,1,9,8]
 
 sorter = SortingAlgorithm()
-sorter.insertion_sort(newList)
+sorter.bubble_sort(newList)
+
+
+
